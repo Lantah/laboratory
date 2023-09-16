@@ -35,7 +35,7 @@ function serializeNetworkState(state) {
     if (state.network.current.name == "custom") {
       return {
         network: state.network.current.name,
-        horizonURL: state.network.current.horizonURL,
+        orbitrURL: state.network.current.orbitrURL,
         networkPassphrase: state.network.current.networkPassphrase,
       };
     }

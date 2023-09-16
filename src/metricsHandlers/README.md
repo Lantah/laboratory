@@ -9,8 +9,8 @@ For purposes of improving the tools we provide our users, we track some metrics 
 
 ## Network picker
 
-* changed horizon url
-  * horizonUrl
+* changed orbitr url
+  * orbitrUrl
 
 ## Account creator
 

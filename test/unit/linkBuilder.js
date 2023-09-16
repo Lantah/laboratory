@@ -4,7 +4,7 @@ import {
   feeBumpTxLink,
   xdrViewer,
   singleAccount,
-  horizonUrlToExplorerLink,
+  orbitrUrlToExplorerLink,
 } from "../../src/helpers/linkBuilder";
 
 describe("linkBuilder", () => {
@@ -52,21 +52,21 @@ describe("linkBuilder", () => {
     });
   });
 
-  describe("horizonUrlToExplorerLink()", () => {
-    it("converts a simple horizon link to a endpoint explorer link", () => {
+  describe("orbitrUrlToExplorerLink()", () => {
+    it("converts a simple orbitr link to a endpoint explorer link", () => {
       expect(
-        horizonUrlToExplorerLink(
-          "https://horizon-testnet.stellar.org/ledgers/1173",
+        orbitrUrlToExplorerLink(
+          "https://orbitr-testnet.lantah.network/ledgers/1173",
         ),
       ).to.equal(
         "#explorer?resource=ledgers&endpoint=single&values=eyJsZWRnZXIiOiIxMTczIn0%3D",
       );
     });
 
-    it("converts a templated horizon link to a endpoint explorer link", () => {
+    it("converts a templated orbitr link to a endpoint explorer link", () => {
       expect(
-        horizonUrlToExplorerLink(
-          "https://horizon-testnet.stellar.org/ledgers/1173/transactions{?cursor,limit,order}",
+        orbitrUrlToExplorerLink(
+          "https://orbitr-testnet.lantah.network/ledgers/1173/transactions{?cursor,limit,order}",
         ),
       ).to.equal(
         "#explorer?resource=transactions&endpoint=for_ledger&values=eyJsZWRnZXIiOiIxMTczIn0%3D",
@@ -74,7 +74,7 @@ describe("linkBuilder", () => {
     });
 
     it("converts a non url into undefined", () => {
-      expect(horizonUrlToExplorerLink("lumens")).to.be.a("undefined");
+      expect(orbitrUrlToExplorerLink("grams")).to.be.a("undefined");
     });
   });
 });

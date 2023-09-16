@@ -1,7 +1,7 @@
 # laboratory
 
-The Stellar Laboratory is a suite of tools to help one learn about exploring the
-Stellar network. See it in action:
+The Lantah Laboratory is a suite of tools to help one learn about exploring the
+Lantah network. See it in action:
 [https://laboratory.stellar.org/](https://laboratory.stellar.org/).
 
 ## Developing

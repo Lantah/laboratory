@@ -17,7 +17,7 @@ addEventHandler(endpointExplorerMetrics);
 
 export const EndpointExplorer = () => {
   const { endpointExplorer, network } = useRedux("endpointExplorer", "network");
-  const baseUrl = network.current.horizonURL;
+  const baseUrl = network.current.orbitrURL;
   const { currentResource, currentEndpoint, results, pendingRequest } =
     endpointExplorer;
 
@@ -38,8 +38,8 @@ export const EndpointExplorer = () => {
             >
               REST API endpoints
             </a>{" "}
-            on the Horizon server. Horizon is the client facing library for the
-            Stellar ecosystem.
+            on the OrbitR server. OrbitR is the client facing library for the
+            Lantah ecosystem.
           </p>
         </div>
         <div className="EndpointExplorer">

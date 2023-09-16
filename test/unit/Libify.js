@@ -292,7 +292,7 @@ describe("Libify.buildTransaction", () => {
         expect(opAtIndex(2).type).to.equal("pathPaymentStrictSend");
       });
       it("contains native destination assset", () => {
-        expect(opAtIndex(2).destAsset.code).to.equal("XLM");
+        expect(opAtIndex(2).destAsset.code).to.equal("GRAM");
       });
       it("contains MONSTER send asset", () => {
         expect(opAtIndex(2).sendAsset.code).to.equal("MONSTER");
@@ -304,7 +304,7 @@ describe("Libify.buildTransaction", () => {
         expect(opAtIndex(3).type).to.equal("pathPaymentStrictReceive");
       });
       it("contains native destination assset", () => {
-        expect(opAtIndex(3).destAsset.code).to.equal("XLM");
+        expect(opAtIndex(3).destAsset.code).to.equal("GRAM");
       });
       it("contains MONSTER send asset", () => {
         expect(opAtIndex(3).sendAsset.code).to.equal("MONSTER");
@@ -334,7 +334,7 @@ describe("Libify.buildTransaction", () => {
         expect(opAtIndex(5).type).to.equal("createPassiveSellOffer");
       });
       it("contains specified amount", () => {
-        expect(opAtIndex(5).amount).to.equal("5.0000000");
+        expect(opAtIndex(5).amount).to.equal("5.000000");
       });
     });
 

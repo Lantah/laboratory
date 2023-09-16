@@ -2,7 +2,7 @@ import { SET_PARAMS } from "../actions/network";
 import { logEvent } from "../helpers/metrics";
 
 const metricsEvents = {
-  changeNetwork: "pick network: changed horizon url",
+  changeNetwork: "pick network: changed orbitr url",
 };
 
 export default function networkMetrics(state, action) {
@@ -10,7 +10,7 @@ export default function networkMetrics(state, action) {
   switch (type) {
     case SET_PARAMS: {
       logEvent(metricsEvents.changeNetwork, {
-        horizonUrl: payload.params.horizonURL,
+        orbitrUrl: payload.params.orbitrURL,
       });
     }
   }

@@ -13,8 +13,8 @@ import { ActionStatus } from "types/types.d";
 export const FriendbotFundAccount = () => {
   const { accountCreator, network } = useRedux("accountCreator", "network");
   const { friendbotStatus, friendbotTarget } = accountCreator;
-  const baseURL = network.current.horizonURL;
-  const IS_TESTNET = baseURL === NETWORK.available.test.horizonURL;
+  const baseURL = network.current.orbitrURL;
+  const IS_TESTNET = baseURL === NETWORK.available.test.orbitrURL;
   const isSoroban = useIsSoroban();
 
   const dispatch = useDispatch();
@@ -71,8 +71,8 @@ export const FriendbotFundAccount = () => {
             Friendbot: Fund a {isSoroban ? "Soroban" : "test"} network account
           </h3>
           <p>
-            The friendbot is a horizon API endpoint that will fund an account
-            with 10,000 lumens on the {isSoroban ? "Soroban " : "test"} network.
+            The friendbot is a orbitr API endpoint that will fund an account
+            with 10,000g on the {isSoroban ? "Soroban " : "test"} network.
           </p>
 
           <PubKeyPicker
@@ -91,7 +91,7 @@ export const FriendbotFundAccount = () => {
               dispatch(startFriendbotRequest(friendbotTarget, isSoroban))
             }
           >
-            Get test network lumens
+            Get test network grams
           </button>
 
           {renderFriendbotMessage()}

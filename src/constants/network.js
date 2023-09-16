@@ -4,15 +4,15 @@ import { Networks as SorobanNetworks } from "soroban-client";
 const NETWORK = {
   available: {
     futurenet: {
-      horizonURL: "https://horizon-futurenet.stellar.org",
+      orbitrURL: "https://orbitr-futurenet.lantah.network",
       networkPassphrase: SorobanNetworks.FUTURENET,
     },
     test: {
-      horizonURL: "https://horizon-testnet.stellar.org",
+      orbitrURL: "https://orbitr-testnet.lantah.network",
       networkPassphrase: Networks.TESTNET,
     },
     public: {
-      horizonURL: "https://horizon.stellar.org",
+      orbitrURL: "https://orbitr.lantah.network",
       networkPassphrase: Networks.PUBLIC,
     },
   },

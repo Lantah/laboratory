@@ -31,7 +31,7 @@ export function chooseNetwork(name) {
     type: SET_PARAMS,
     params: {
       name,
-      horizonURL: NETWORK.available[name].horizonURL,
+      orbitrURL: NETWORK.available[name].orbitrURL,
       networkPassphrase: NETWORK.available[name].networkPassphrase,
     },
   };

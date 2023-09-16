@@ -11,7 +11,7 @@ import { LOAD_STATE } from "../actions/routing";
 
 export const defaultNetwork = {
   name: NETWORK.defaultName,
-  horizonURL: NETWORK.available[NETWORK.defaultName].horizonURL,
+  orbitrURL: NETWORK.available[NETWORK.defaultName].orbitrURL,
   networkPassphrase: NETWORK.available[NETWORK.defaultName].networkPassphrase,
 };
 
@@ -21,7 +21,7 @@ let current = (state = defaultNetwork, action) => {
       if (action.queryObj.network == "custom") {
         return {
           name: action.queryObj.network,
-          horizonURL: action.queryObj.horizonURL,
+          orbitrURL: action.queryObj.orbitrURL,
           networkPassphrase: action.queryObj.networkPassphrase,
         };
       }

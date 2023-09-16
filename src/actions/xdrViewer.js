@@ -23,16 +23,16 @@ export function updateXdrType(xdrType) {
 }
 
 export const FETCH_LATEST_TX = "FETCH_LATEST_TX";
-export function fetchLatestTx(horizonBaseUrl, networkPassphrase) {
+export function fetchLatestTx(orbitrBaseUrl, networkPassphrase) {
   return (dispatch) => {
     dispatch({ type: FETCH_LATEST_TX });
     axios
-      .get(horizonBaseUrl + "/transactions?limit=1&order=desc")
+      .get(orbitrBaseUrl + "/transactions?limit=1&order=desc")
       .then((r) => {
         const xdr = r.data._embedded.records[0].envelope_xdr;
         dispatch(updateXdrInput(xdr));
         dispatch(updateXdrType("TransactionEnvelope"));
-        dispatch(fetchSigners(xdr, horizonBaseUrl, networkPassphrase));
+        dispatch(fetchSigners(xdr, orbitrBaseUrl, networkPassphrase));
       })
       .catch((r) => dispatch({ type: FETCH_SEQUENCE_FAIL, payload: r }));
   };
@@ -40,7 +40,7 @@ export function fetchLatestTx(horizonBaseUrl, networkPassphrase) {
 
 export function fetchSigners(
   input,
-  horizonBaseUrl,
+  orbitrBaseUrl,
   networkPassphrase,
   isSoroban = false,
 ) {
@@ -84,7 +84,7 @@ export function fetchSigners(
 
       // Get all signers per source account - array of promises
       sourceAccounts = Object.keys(sourceAccounts).map((accountID) =>
-        axios.get(horizonBaseUrl + "/accounts/" + accountID),
+        axios.get(orbitrBaseUrl + "/accounts/" + accountID),
       );
       const signatures = [];
 

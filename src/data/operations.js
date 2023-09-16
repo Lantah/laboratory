@@ -61,7 +61,7 @@ export const operationsMap = [
     label: "Path Payment Strict Send",
     operationPane: PathPaymentStrictSend,
     helpNote:
-      "Sends an amount in a specific asset to a destination account through a path of offers. This allows the asset sent (e.g., 450 XLM) to be different from the asset received (e.g, 6 BTC). A Path Payment Strict Send allows a user to specify the amount of the asset to send. The amount received will vary based on offers in the order books",
+      "Sends an amount in a specific asset to a destination account through a path of offers. This allows the asset sent (e.g., 450 GRAM) to be different from the asset received (e.g, 6 BTC). A Path Payment Strict Send allows a user to specify the amount of the asset to send. The amount received will vary based on offers in the order books",
     docsUrl:
       "https://developers.stellar.org/docs/start/list-of-operations/#path-payment-strict-send",
   },
@@ -70,7 +70,7 @@ export const operationsMap = [
     label: "Path Payment Strict Receive",
     operationPane: PathPaymentStrictReceive,
     helpNote:
-      "Sends an amount in a specific asset to a destination account through a path of offers. This allows the asset sent (e.g., 450 XLM) to be different from the asset received (e.g, 6 BTC). A Path Payment Strict Receive allows a user to specify the amount of the asset received. The amount sent varies based on offers in the order books.",
+      "Sends an amount in a specific asset to a destination account through a path of offers. This allows the asset sent (e.g., 450 GRAM) to be different from the asset received (e.g, 6 BTC). A Path Payment Strict Receive allows a user to specify the amount of the asset received. The amount sent varies based on offers in the order books.",
     docsUrl:
       "https://developers.stellar.org/docs/start/list-of-operations/#path-payment-strict-receive",
   },
@@ -128,7 +128,7 @@ export const operationsMap = [
     label: "Account Merge",
     operationPane: AccountMerge,
     helpNote:
-      "Transfers the native balance (the amount of XLM an account holds) to another account and removes the source account from the ledger.",
+      "Transfers the native balance (the amount of GRAM an account holds) to another account and removes the source account from the ledger.",
     docsUrl:
       "https://developers.stellar.org/docs/start/list-of-operations/#account-merge",
   },

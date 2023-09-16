@@ -4,8 +4,8 @@ import each from "lodash/each";
 import assign from "lodash/assign";
 import has from "lodash/has";
 
-// routeTable is derived from Horizon init_web.go. `routeTable` is intended to
-// look similar to Horizon's code for routing requests.
+// routeTable is derived from OrbitR init_web.go. `routeTable` is intended to
+// look similar to OrbitR's code for routing requests.
 // The key is the url template with path template names slightly altered to
 // match with the Endpoint Setup Pane components in the laboratory.
 // Commented out code lines signify endpoints that the Laboratory does not support
@@ -75,7 +75,7 @@ function stripTemplatedCurlyBrackets(inputUrl) {
   return inputUrl.replace(/\{.+\}$/, "");
 }
 
-function horizonUrlParser(inputUrl) {
+function orbitrUrlParser(inputUrl) {
   let parsedPath = url.parse(stripTemplatedCurlyBrackets(inputUrl)).path;
   if (parsedPath === null) {
     return;
@@ -142,4 +142,4 @@ function assignToParam(params, source, destObj, destKey) {
   delete params[source];
 }
 
-export default horizonUrlParser;
+export default orbitrUrlParser;

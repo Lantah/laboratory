@@ -1,4 +1,4 @@
-import {xdrViewer, singleAccount, horizonUrlToExplorerLink} from './linkBuilder';
+import {xdrViewer, singleAccount, orbitrUrlToExplorerLink} from './linkBuilder';
 
 // Map of functions specific to JSON property keys that creates urls for a given
 // value.
@@ -29,7 +29,7 @@ let linkHighlighterRules = {
   'account': accountIdGenerator,
   'source_account': accountIdGenerator,
   'destination_account': accountIdGenerator,
-  'href': horizonUrlToExplorerLink,
+  'href': orbitrUrlToExplorerLink,
 };
 
 export default linkHighlighterRules;

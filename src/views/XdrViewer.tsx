@@ -31,7 +31,7 @@ export const XdrViewer = () => {
   const dispatch = useDispatch();
   const { xdrViewer, network } = useRedux("xdrViewer", "network");
   const { fetchedSigners, input, type } = xdrViewer;
-  const { horizonURL, networkPassphrase } = network.current;
+  const { orbitrURL, networkPassphrase } = network.current;
   const isSoroban = useIsSoroban();
   const sdk = isSoroban ? SorobanSdk : StellarSdk;
   // Array of all the xdr types. Then, the most common ones appear at the top
@@ -82,7 +82,7 @@ export const XdrViewer = () => {
     type === "TransactionEnvelope" &&
     fetchedSigners.state === FETCHED_SIGNERS.NONE
   ) {
-    dispatch(fetchSigners(input, horizonURL, networkPassphrase, isSoroban));
+    dispatch(fetchSigners(input, orbitrURL, networkPassphrase, isSoroban));
   }
 
   return (
@@ -94,7 +94,7 @@ export const XdrViewer = () => {
               <a href="https://developers.stellar.org/docs/encyclopedia/xdr">
                 External Data Representation (XDR)
               </a>{" "}
-              is a standardized protocol that the Stellar network uses to encode
+              is a standardized protocol that the Lantah network uses to encode
               data.
             </p>
             <p>
@@ -106,7 +106,7 @@ export const XdrViewer = () => {
             Input a base-64 encoded XDR blob, or{" "}
             <a
               onClick={() =>
-                dispatch(fetchLatestTx(horizonURL, networkPassphrase))
+                dispatch(fetchLatestTx(orbitrURL, networkPassphrase))
               }
             >
               fetch the latest transaction to try it out
@@ -124,7 +124,7 @@ export const XdrViewer = () => {
                   dispatch(
                     fetchSigners(
                       event.target.value,
-                      horizonURL,
+                      orbitrURL,
                       networkPassphrase,
                       isSoroban,
                     ),

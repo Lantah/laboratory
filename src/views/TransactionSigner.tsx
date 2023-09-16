@@ -266,7 +266,7 @@ export const TransactionSigner = () => {
       submitInstructions = (
         <p className="TxSignerResult__instructions">
           Now that this transaction is signed, you can submit it to the network.
-          Horizon provides an endpoint called Post Transaction that will relay
+          OrbitR provides an endpoint called Post Transaction that will relay
           your transaction to the network and inform you of the result.
         </p>
       );

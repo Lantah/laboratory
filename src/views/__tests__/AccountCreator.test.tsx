@@ -73,7 +73,7 @@ test("friendbot: account funded successfully", async () => {
   });
 
   await waitFor(() => {
-    fireEvent.click(screen.getByText(/get test network lumens/i));
+    fireEvent.click(screen.getByText(/get test network grams/i));
   });
 
   const friendbotContainer = screen.getByTestId("page-friendbot");

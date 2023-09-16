@@ -78,13 +78,13 @@ export const FETCH_SEQUENCE_START = "FETCH_SEQUENCE_START";
 export const FETCH_SEQUENCE_FAIL = "FETCH_SEQUENCE_FAIL";
 export const FETCH_SEQUENCE_SUCCESS = "FETCH_SEQUENCE_SUCCESS";
 // This is only meant to be used for fetching *next* sequence number for txbuilder
-export function fetchSequence(accountId, horizonBaseUrl) {
+export function fetchSequence(accountId, orbitrBaseUrl) {
   return (dispatch) => {
     dispatch({
       type: FETCH_SEQUENCE_START,
     });
     axios
-      .get(horizonBaseUrl + "/accounts/" + accountId)
+      .get(orbitrBaseUrl + "/accounts/" + accountId)
       .then((r) =>
         dispatch({
           type: FETCH_SEQUENCE_SUCCESS,
@@ -98,13 +98,13 @@ export function fetchSequence(accountId, horizonBaseUrl) {
 export const FETCH_BASE_FEE = "FETCH_BASE_FEE";
 export const FETCH_BASE_FEE_FAIL = "FETCH_BASE_FEE_FAIL";
 export const FETCH_BASE_FEE_SUCCESS = "FETCH_BASE_FEE_SUCCESS";
-export function fetchBaseFee(horizonBaseUrl) {
+export function fetchBaseFee(orbitrBaseUrl) {
   return (dispatch) => {
     dispatch({
       type: FETCH_BASE_FEE,
     });
     axios
-      .get(horizonBaseUrl + "/fee_stats")
+      .get(orbitrBaseUrl + "/fee_stats")
       .then((r) =>
         dispatch({
           type: FETCH_BASE_FEE_SUCCESS,

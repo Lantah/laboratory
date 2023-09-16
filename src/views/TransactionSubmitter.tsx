@@ -23,7 +23,7 @@ export const TransactionSubmitter = () => {
   const dispatch = useDispatch();
   const { xdrViewer, network } = useRedux("xdrViewer", "network");
   const { fetchedSigners, input } = xdrViewer;
-  const { horizonURL, networkPassphrase } = network.current;
+  const { orbitrURL, networkPassphrase } = network.current;
   const isSoroban = useIsSoroban();
   const { error, nodes } = useMemo(() => {
     if (input === "") {
@@ -58,7 +58,7 @@ export const TransactionSubmitter = () => {
 
   // Fetch signers on initial load
   if (fetchedSigners.state === FETCHED_SIGNERS.NONE) {
-    dispatch(fetchSigners(input, horizonURL, networkPassphrase, isSoroban));
+    dispatch(fetchSigners(input, orbitrURL, networkPassphrase, isSoroban));
   }
 
   return (
@@ -78,7 +78,7 @@ export const TransactionSubmitter = () => {
                 dispatch(
                   fetchSigners(
                     event.target.value,
-                    horizonURL,
+                    orbitrURL,
                     networkPassphrase,
                     isSoroban,
                   ),
@@ -92,7 +92,7 @@ export const TransactionSubmitter = () => {
       <TxSubmitterResult
         txXdr={input}
         networkPassphrase={networkPassphrase}
-        horizonURL={horizonURL}
+        orbitrURL={orbitrURL}
       />
       <div className="XdrViewer__submit so-back">
         <div className="so-chunk">

@@ -1,7 +1,7 @@
 import url from "url";
 import { stateToQueryObj } from "./stateSerializer";
 import SLUG from "../constants/slug";
-import horizonUrlParser from "./horizonUrlParser";
+import orbitrUrlParser from "./orbitrUrlParser";
 import TX_TYPES from "../constants/transaction_types";
 
 // The linkBuilder attempts to abstract the specific details of the store so that
@@ -73,8 +73,8 @@ export function singleAccount(accountId) {
   });
 }
 
-export function horizonUrlToExplorerLink(horizonUrl) {
-  let urlInfo = horizonUrlParser(horizonUrl);
+export function orbitrUrlToExplorerLink(orbitrUrl) {
+  let urlInfo = orbitrUrlParser(orbitrUrl);
   if (typeof urlInfo === "undefined") {
     return;
   }

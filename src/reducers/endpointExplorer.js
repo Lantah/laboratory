@@ -104,7 +104,7 @@ function results(state, action) {
   if (action.type === ERROR_REQUEST) {
     let errorContent;
     if (action.errorStatus === 0) {
-      errorContent = "Unable to reach Horizon server.";
+      errorContent = "Unable to reach OrbitR server.";
     } else {
       errorContent = JSON.stringify(action.body, null, 2);
     }

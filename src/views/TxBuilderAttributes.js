@@ -23,7 +23,7 @@ function TxBuilderAttributes(props) {
   let {
     onUpdate,
     attributes,
-    horizonURL,
+    orbitrURL,
     dispatch,
     feeBumpAttributes,
     networkPassphrase,
@@ -36,7 +36,7 @@ function TxBuilderAttributes(props) {
     // Don't fetch base fee again if txn has a sequence number (when returning
     // to Build Transaction tab). Refetching base fee resets previously set fee.
     if (!attributes.sequence) {
-      dispatch(fetchBaseFee(horizonURL));
+      dispatch(fetchBaseFee(orbitrURL));
     }
   }, []);
 
@@ -124,9 +124,9 @@ function TxBuilderAttributes(props) {
                 <a href="https://developers.stellar.org/docs/glossary#base-fee">
                   network base fee
                 </a>{" "}
-                is currently set to {networkBaseFee} stroops (
-                {networkBaseFee / 1e7} lumens). Based on current network
-                activity, we suggest setting it to {networkMinFee} stroops.
+                is currently set to {networkBaseFee} µg (
+                {networkBaseFee / 1e6} grams). Based on current network
+                activity, we suggest setting it to {networkMinFee} µg.
                 Final transaction fee is equal to base fee times number of
                 operations in this transaction.
               </p>
@@ -246,9 +246,9 @@ function TxBuilderAttributes(props) {
                 <a href="https://developers.stellar.org/docs/glossary#base-fee">
                   network base fee
                 </a>{" "}
-                is currently set to {networkBaseFee} stroops (
-                {networkBaseFee / 1e7} lumens). Based on current network
-                activity, we suggest setting it to {networkMinFee} stroops.
+                is currently set to {networkBaseFee} µg (
+                {networkBaseFee / 1e6} grams). Based on current network
+                activity, we suggest setting it to {networkMinFee} µg.
                 Final transaction fee is equal to base fee times number of
                 operations in this transaction.
               </p>
@@ -282,7 +282,7 @@ class sequenceFetcherClass extends React.Component {
   render() {
     let { attributes, sequenceFetcherError } = this.props.state;
     let dispatch = this.props.dispatch;
-    let horizonURL = this.props.horizonURL;
+    let orbitrURL = this.props.orbitrURL;
     const isMAddress = StrKey.isValidMed25519PublicKey(
       attributes.sourceAccount,
     );
@@ -326,14 +326,14 @@ class sequenceFetcherClass extends React.Component {
         <p className="optionsTable__pair__content__note">
           <a
             className="s-button"
-            onClick={() => dispatch(fetchSequence(sourceAccount, horizonURL))}
+            onClick={() => dispatch(fetchSequence(sourceAccount, orbitrURL))}
           >
             Fetch next sequence number for account starting with "
             {truncatedAccountId}"
           </a>
           <br />
           <small>
-            Fetching from: <code>{horizonURL}</code>
+            Fetching from: <code>{orbitrURL}</code>
           </small>
           <br />
         </p>
@@ -346,7 +346,7 @@ let SequenceFetcher = connect(chooseState)(sequenceFetcherClass);
 function chooseState(state) {
   return {
     state: state.transactionBuilder,
-    horizonURL: state.network.current.horizonURL,
+    orbitrURL: state.network.current.orbitrURL,
     networkPassphrase: state.network.current.networkPassphrase,
   };
 }

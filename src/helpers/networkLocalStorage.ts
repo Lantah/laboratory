@@ -2,7 +2,7 @@ import { LOCAL_STORAGE_NETWORK } from "constants/settings";
 
 interface NetworkLocalStorageSaveProps {
   name: string;
-  horizonURL?: string;
+  orbitrURL?: string;
   networkPassphrase?: string;
 }
 

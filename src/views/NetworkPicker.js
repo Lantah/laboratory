@@ -73,12 +73,12 @@ class NetworkPicker extends React.Component {
                 </a>
               </div>
               <div>
-                <p>Horizon URL:</p>
+                <p>OrbitR URL:</p>
                 <TextPicker
-                  value={modal.values.horizonURL}
-                  validator={isValidHorizonURL}
+                  value={modal.values.orbitrURL}
+                  validator={isValidOrbitRURL}
                   onUpdate={(value) =>
-                    dispatch(updateModal("horizonURL", value))
+                    dispatch(updateModal("orbitrURL", value))
                   }
                 />
                 <p>Network Passphrase:</p>
@@ -108,13 +108,13 @@ class NetworkPicker extends React.Component {
             onToggle={() => dispatch(setModalVisibility(true))}
           />
         </form>
-        <span className="NetworkPicker__url">{current.horizonURL}</span>
+        <span className="NetworkPicker__url">{current.orbitrURL}</span>
       </div>
     );
   }
 }
 
-const isValidHorizonURL = (u) => {
+const isValidOrbitRURL = (u) => {
   try {
     new URL(u);
     return true;

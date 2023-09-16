@@ -9,9 +9,9 @@ import { useRedux } from "hooks/useRedux";
 export const KeypairGenerator = () => {
   const { accountCreator, network } = useRedux("accountCreator", "network");
   const { keypairGeneratorResult, keypairGeneratorPubKey } = accountCreator;
-  const baseURL = network.current.horizonURL;
-  const IS_TESTNET = baseURL === NETWORK.available.test.horizonURL;
-  const IS_FUTURENET = baseURL === NETWORK.available.futurenet.horizonURL;
+  const baseURL = network.current.orbitrURL;
+  const IS_TESTNET = baseURL === NETWORK.available.test.orbitrURL;
+  const IS_FUTURENET = baseURL === NETWORK.available.futurenet.orbitrURL;
 
   const dispatch = useDispatch();
 
@@ -61,9 +61,9 @@ export const KeypairGenerator = () => {
         <h3>Keypair generator</h3>
 
         <p>
-          These keypairs can be used on the Stellar network where one is
+          These keypairs can be used on the Lantah network where one is
           required. For example, it can be used as an account master key,
-          account signer, and/or as a stellar-core node key.
+          account signer, and/or as a gravity node key.
         </p>
 
         <button

@@ -16,7 +16,7 @@ import {
 
 const testNetwork = {
   name: "foo",
-  horizonURL: "https://foo.baz",
+  orbitrURL: "https://foo.baz",
   networkPassphrase: "bar",
 };
 
@@ -69,7 +69,7 @@ test("extrapolate XDR on input change", async () => {
   );
   expect(fetchSignersSpy).toHaveBeenCalledWith(
     MOCK_SIGNED_TRANSACTION,
-    testNetwork.horizonURL,
+    testNetwork.orbitrURL,
     testNetwork.networkPassphrase,
     false
   );

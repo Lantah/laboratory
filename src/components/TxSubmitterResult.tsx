@@ -5,7 +5,7 @@ import {
   AccountRequiresMemoError,
   BadResponseError,
   NetworkError,
-  Horizon,
+  OrbitR,
 } from "stellar-sdk";
 import { EasySelect } from "./EasySelect";
 import { Collapsible } from "./Collapsible";
@@ -29,7 +29,7 @@ const initialState = {
 
 const reducer = (
   state: any,
-  action: { type: ACTIONS; payload?: Horizon.SubmitTransactionResponse },
+  action: { type: ACTIONS; payload?: OrbitR.SubmitTransactionResponse },
 ) => {
   switch (action.type) {
     case ACTIONS.submit:
@@ -56,13 +56,13 @@ const reducer = (
 interface TxSubmitterResultProps {
   txXdr: string;
   networkPassphrase: string;
-  horizonURL: string;
+  orbitrURL: string;
 }
 
 export const TxSubmitterResult = ({
   txXdr,
   networkPassphrase,
-  horizonURL,
+  orbitrURL,
 }: TxSubmitterResultProps) => {
   const [submission, dispatch] = useReducer(reducer, initialState);
 
@@ -83,7 +83,7 @@ export const TxSubmitterResult = ({
                 txXdr,
                 networkPassphrase,
               );
-              const server = new Server(horizonURL, { appName: "Laboratory" });
+              const server = new Server(orbitrURL, { appName: "Laboratory" });
               server.submitTransaction(transaction).then(
                 (res) => {
                   dispatch({ type: ACTIONS.success, payload: res });
@@ -123,7 +123,7 @@ const Response = ({
   result_xdr,
   result_meta_xdr,
   fee_meta_xdr,
-}: ResponseProps & Horizon.TransactionResponse) => (
+}: ResponseProps & OrbitR.TransactionResponse) => (
   <div className="XdrViewer__submit so-back TransactionSubmitter__result">
     <div className="so-chunk">
       <h3
