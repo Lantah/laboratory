@@ -98,7 +98,7 @@ export const XdrViewer = () => {
               data.
             </p>
             <p>
-              The XDR Viewer is a tool that displays contents of a Stellar XDR
+              The XDR Viewer is a tool that displays contents of a lantah XDR
               blob in a human readable format.
             </p>
           </div>

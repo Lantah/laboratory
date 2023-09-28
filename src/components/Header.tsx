@@ -5,7 +5,7 @@ export const Header = () => (
     <div className="so-chunk">
       <div className="so-siteHeader LaboratoryChrome__header">
         <span className="so-logo">
-          <a href="https://www.stellar.org/" className="so-logo__main">
+          <a href="https://www.lantah.org/" className="so-logo__main">
             <svg
               width="100"
               height="61"

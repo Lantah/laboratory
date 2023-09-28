@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "description": "",
-  "author": "Stellar Development Foundation <stellar@stellar.org>",
+  "author": "Stellar Co <contact@stellar.org>",
   "license": "Apache-2.0",
   "scripts": {
     "start": "react-scripts start",

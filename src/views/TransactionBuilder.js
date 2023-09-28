@@ -25,7 +25,7 @@ class TransactionBuilder extends React.Component {
           <div className="so-chunk">
             <div className="pageIntro">
               <p>
-                The transaction builder lets you build a new Stellar
+                The transaction builder lets you build a new lantah
                 transaction.
               </p>
               <p>

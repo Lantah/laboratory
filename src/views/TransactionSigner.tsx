@@ -483,7 +483,7 @@ export const TransactionSigner = () => {
         <div className="so-chunk">
           <div className="pageIntro">
             <p>
-              The transaction signer lets you add signatures to a Stellar
+              The transaction signer lets you add signatures to a lantah
               transaction. Signatures are used in the network to prove that the
               account is authorized to perform the operations in the
               transaction.
