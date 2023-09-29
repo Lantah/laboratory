@@ -52,7 +52,7 @@ export const MuxedAccount = () => {
           >
             SEP-23
           </a>
-          ) is one that resolves a single Stellar G...account to many different
+          ) is one that resolves a single Lantah G...account to many different
           underlying IDs.
         </p>
 

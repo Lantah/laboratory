@@ -173,7 +173,7 @@ const checkSignatures = (
 
 const formatter = new Intl.NumberFormat("en-US", {
   minimumFractionDigits: 1,
-  maximumFractionDigits: 7,
+  maximumFractionDigits: 6,
 });
 
 interface ConvertTypedValue {
