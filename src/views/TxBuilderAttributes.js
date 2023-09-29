@@ -6,7 +6,7 @@ import HelpMark from "../components/HelpMark";
 import TxTypePicker from "../components/FormComponents/TxTypePicker";
 import PubKeyPicker from "../components/FormComponents/PubKeyPicker";
 import SequencePicker from "../components/FormComponents/SequencePicker";
-import StroopsPicker from "../components/FormComponents/StroopsPicker";
+import µgPicker from "../components/FormComponents/µgPicker";
 import MemoPicker from "../components/FormComponents/MemoPicker";
 import TimeBoundsPicker from "../components/FormComponents/TimeBoundsPicker";
 import NETWORK from "../constants/network";
@@ -113,7 +113,7 @@ function TxBuilderAttributes(props) {
                 </span>
               }
             >
-              <StroopsPicker
+              <µgPicker
                 value={attributes["fee"]}
                 onUpdate={(value) => {
                   onUpdate("fee", value);
@@ -235,7 +235,7 @@ function TxBuilderAttributes(props) {
                 </span>
               }
             >
-              <StroopsPicker
+              <µgsPicker
                 value={feeBumpAttributes["maxFee"]}
                 onUpdate={(value) => {
                   dispatch(updateFeeBumpAttribute({ maxFee: value }));
