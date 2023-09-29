@@ -132,7 +132,7 @@ export const TransactionSigner = () => {
               {transaction.feeSource}
             </span>
           ),
-          "Transaction Fee (stroops)": (
+          "Transaction Fee (µg)": (
             <span data-testid="transaction-signer-transaction-fee">
               {transaction.fee}
             </span>
@@ -164,7 +164,7 @@ export const TransactionSigner = () => {
               {transaction.innerTransaction.sequence}
             </span>
           ),
-          "Inner transaction fee (stroops)": (
+          "Inner transaction fee (µg)": (
             <span data-testid="transaction-signer-inner-fee">
               {transaction.innerTransaction.fee}
             </span>
@@ -195,7 +195,7 @@ export const TransactionSigner = () => {
               {transaction.sequence}
             </span>
           ),
-          "Transaction Fee (stroops)": (
+          "Transaction Fee (µg)": (
             <span data-testid="transaction-signer-fee">{transaction.fee}</span>
           ),
           "Number of operations": (
