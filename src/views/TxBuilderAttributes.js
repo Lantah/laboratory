@@ -235,7 +235,7 @@ function TxBuilderAttributes(props) {
                 </span>
               }
             >
-              <µgsPicker
+              <µgPicker
                 value={feeBumpAttributes["maxFee"]}
                 onUpdate={(value) => {
                   dispatch(updateFeeBumpAttribute({ maxFee: value }));
