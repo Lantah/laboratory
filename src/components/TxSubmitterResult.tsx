@@ -6,7 +6,7 @@ import {
   BadResponseError,
   NetworkError,
   OrbitR,
-} from "stellar-sdk";
+} from "lantah-sdk";
 import { EasySelect } from "./EasySelect";
 import { Collapsible } from "./Collapsible";
 

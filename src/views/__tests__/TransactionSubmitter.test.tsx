@@ -3,7 +3,7 @@
  */
 
 import { fireEvent, waitFor, screen } from "@testing-library/react";
-import * as StellarSdk from "stellar-sdk";
+import * as LantahSdk from "lantah-sdk";
 import { render } from "helpers/testHelpers";
 import { TransactionSubmitter } from "views/TransactionSubmitter";
 import * as extrapolateFromXdr from "helpers/extrapolateFromXdr";
@@ -26,8 +26,8 @@ const MOCK_SERVER_RESPONSE_SUCCESS = {
   successful: true,
 };
 
-jest.mock("stellar-sdk", () => ({
-  ...jest.requireActual("stellar-sdk"),
+jest.mock("lantah-sdk", () => ({
+  ...jest.requireActual("lantah-sdk"),
   Server: jest.fn().mockImplementation(() => ({
     submitTransaction: () => new Promise((resolve) => resolve({})),
   })),
@@ -205,7 +205,7 @@ describe("valid signature path", () => {
 
   test("submits properly encoded XDR with valid signature", async () => {
     // @ts-ignore
-    StellarSdk.Server.mockImplementation(() => ({
+    LantahSdk.Server.mockImplementation(() => ({
       submitTransaction: () =>
         new Promise((resolve) => resolve(MOCK_SERVER_RESPONSE_SUCCESS)),
     }));
@@ -248,11 +248,11 @@ describe("valid signature path", () => {
 
   test("shows memo error on submit", async () => {
     // @ts-ignore
-    StellarSdk.Server.mockImplementation(() => ({
+    LantahSdk.Server.mockImplementation(() => ({
       submitTransaction: () =>
         new Promise((_resolve, reject) =>
           reject(
-            new StellarSdk.AccountRequiresMemoError("memoError", "account1", 2),
+            new LantahSdk.AccountRequiresMemoError("memoError", "account1", 2),
           ),
         ),
     }));
@@ -283,11 +283,11 @@ describe("valid signature path", () => {
 
   test("shows response error on submit", async () => {
     // @ts-ignore
-    StellarSdk.Server.mockImplementation(() => ({
+    LantahSdk.Server.mockImplementation(() => ({
       submitTransaction: () =>
         new Promise((_resolve, reject) =>
           reject(
-            new StellarSdk.BadResponseError("badResponseMsg", {
+            new LantahSdk.BadResponseError("badResponseMsg", {
               data: {
                 extras: { result_xdr: "foo", result_codes: { code: 500 } },
               },
@@ -322,7 +322,7 @@ describe("valid signature path", () => {
 
   test("shows no response error on submit", async () => {
     // @ts-ignore
-    StellarSdk.Server.mockImplementation(() => ({
+    LantahSdk.Server.mockImplementation(() => ({
       submitTransaction: () =>
         new Promise((_resolve, reject) => reject(new Error("noResponseMsg"))),
     }));
@@ -350,10 +350,10 @@ describe("valid signature path", () => {
 
   test("shows no response BadResponseError on submit", async () => {
     // @ts-ignore
-    StellarSdk.Server.mockImplementation(() => ({
+    LantahSdk.Server.mockImplementation(() => ({
       submitTransaction: () =>
         new Promise((_resolve, reject) =>
-          reject(new StellarSdk.BadResponseError("noResponseMsg", "")),
+          reject(new LantahSdk.BadResponseError("noResponseMsg", "")),
         ),
     }));
 

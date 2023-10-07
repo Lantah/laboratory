@@ -1,4 +1,4 @@
-import { Networks } from "stellar-sdk";
+import { Networks } from "lantah-sdk";
 import { Networks as SorobanNetworks } from "soroban-client";
 
 const NETWORK = {

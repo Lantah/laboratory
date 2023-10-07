@@ -1,4 +1,4 @@
-import { xdr, Transaction, Operation, Networks } from "stellar-sdk";
+import { xdr, Transaction, Operation, Networks } from "lantah-sdk";
 import Libify from "../../src/helpers/Libify";
 
 describe("Libify.buildTransaction", () => {

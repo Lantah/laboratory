@@ -1,4 +1,4 @@
-import StellarSdk from "stellar-sdk";
+import LantahSdk from "lantah-sdk";
 import * as SorobanSdk from "soroban-client";
 import axios from "axios";
 import { FETCH_SEQUENCE_FAIL } from "actions/transactionBuilder";
@@ -44,7 +44,7 @@ export function fetchSigners(
   networkPassphrase,
   isSoroban = false,
 ) {
-  const sdk = isSoroban ? SorobanSdk : StellarSdk;
+  const sdk = isSoroban ? SorobanSdk : LantahSdk;
 
   return (dispatch) => {
     dispatch({ type: FETCHED_SIGNERS.PENDING });

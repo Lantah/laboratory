@@ -9,7 +9,7 @@
 // - string: string values that appear as just plain text
 // - object: typed values always with a type and value `{type: 'code', value: 'Foo();'}`
 
-import StellarSdk from "stellar-sdk";
+import LantahSdk from "lantah-sdk";
 import * as SorobanSdk from "soroban-client";
 import isArray from "lodash/isArray";
 import isString from "lodash/isString";
@@ -28,10 +28,10 @@ export default function extrapolateFromXdr(input, type, isSoroban = false) {
     Keypair = SorobanSdk.Keypair;
     Operation = SorobanSdk.Operation;
   } else {
-    xdr = StellarSdk.xdr;
-    StrKey = StellarSdk.StrKey;
-    Keypair = StellarSdk.Keypair;
-    Operation = StellarSdk.Operation;
+    xdr = LantahSdk.xdr;
+    StrKey = LantahSdk.StrKey;
+    Keypair = LantahSdk.Keypair;
+    Operation = LantahSdk.Operation;
   }
 
   function buildTreeFromObject(object, anchor, name) {

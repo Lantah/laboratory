@@ -1,4 +1,4 @@
-import { StrKey } from "stellar-sdk";
+import { StrKey } from "lantah-sdk";
 
 import TextPicker from "components/FormComponents/TextPicker";
 import { ImportMark } from "components/ImportMark";
@@ -30,7 +30,7 @@ export default function MuxedKeyPicker({
           "Example: MBRWSVNURRYVIYSWLRFQ5AAAUWPKOZZNZVVVIXHFGUSGIRVKLVIDYAAAAAAAAAAD5GJ4U"
         }
         validator={(value: string) => {
-          // TODO: remove when type is added to stellar-sdk
+          // TODO: remove when type is added to lantah-sdk
           // @ts-ignore
           if (!StrKey.isValidMed25519PublicKey(value)) {
             return "Muxed account address is invalid.";

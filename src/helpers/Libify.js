@@ -1,14 +1,14 @@
 // Libify is a utility that converts a wide variety of inputs into their stricter
-// representations in Stellar libraries such as js-stellar-sdk and js-stellar-sdk.
+// representations in Stellar libraries such as js-lantah-sdk and js-lantah-sdk.
 //
-// The Libify api aims to look similar to that of js-stellar-sdk and Sdk. It
+// The Libify api aims to look similar to that of js-lantah-sdk and Sdk. It
 // will output better error messages in cases where helpful (instead of just
 // undefined error messages).
 //
 // Libify could also be used to generate source code from input but might not be
 // the best choice since source code differs based on content.
 
-import Sdk from "stellar-sdk";
+import Sdk from "lantah-sdk";
 import * as SorobanSdk from "soroban-client";
 import defaults from "lodash/defaults";
 import each from "lodash/each";
@@ -158,7 +158,7 @@ Libify.Claimant = function (opts) {
 };
 
 // Takes in a type and a pile of options and attempts to turn it into a valid
-// js-stellar-sdk operation. If not, it will throw an error.
+// js-lantah-sdk operation. If not, it will throw an error.
 Libify.Operation = function (type, opts) {
   assertNotEmpty(type, "Operation type is required");
   let opFunction = Libify.Operation[type];

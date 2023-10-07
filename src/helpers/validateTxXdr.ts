@@ -1,10 +1,10 @@
 import trim from "lodash/trim";
-import StellarSdk from "stellar-sdk";
+import LantahSdk from "lantah-sdk";
 import * as SorobanSdk from "soroban-client";
 import { validateBase64 } from "./validateBase64";
 
 export const validateTxXdr = (input: string, isSoroban = false) => {
-  let xdr = StellarSdk.xdr;
+  let xdr = LantahSdk.xdr;
   if (isSoroban) {
     xdr = SorobanSdk.xdr;
   }

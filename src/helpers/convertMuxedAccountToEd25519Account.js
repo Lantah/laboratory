@@ -1,4 +1,4 @@
-import {xdr, StrKey} from 'stellar-sdk';
+import {xdr, StrKey} from 'lantah-sdk';
 
 // This function was meant to convert string keys representing muxed accounts
 // `M...` to their ED25519 public account `G..` However since SEP23 hasn't been

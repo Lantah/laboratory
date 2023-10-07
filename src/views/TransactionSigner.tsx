@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import StellarSdk from "stellar-sdk";
+import LantahSdk from "lantah-sdk";
 import * as SorobanSdk from "soroban-client";
 import { isConnected } from "@stellar/freighter-api";
 import isUndefined from "lodash/isUndefined";
@@ -50,9 +50,9 @@ export const TransactionSigner = () => {
     FeeBumpTransaction = SorobanSdk.FeeBumpTransaction;
     Networks = SorobanSdk.Networks;
   } else {
-    TransactionBuilder = StellarSdk.TransactionBuilder;
-    FeeBumpTransaction = StellarSdk.FeeBumpTransaction;
-    Networks = StellarSdk.Networks;
+    TransactionBuilder = LantahSdk.TransactionBuilder;
+    FeeBumpTransaction = LantahSdk.FeeBumpTransaction;
+    Networks = LantahSdk.Networks;
   }
 
   const {

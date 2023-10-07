@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 import { fireEvent, screen, waitFor, within } from "@testing-library/react";
-import StellarSdk from "stellar-sdk";
+import LantahSdk from "lantah-sdk";
 import { render } from "helpers/testHelpers";
 import { AccountCreator } from "views/AccountCreator";
 
@@ -12,20 +12,20 @@ const MUXED_ACCOUNT_ID = 1;
 const MUXED_ACCOUNT_CREATED = "baz-1";
 const MUXED_ACCOUNT_PARSED = "baz-2";
 
-jest.mock("stellar-sdk");
+jest.mock("lantah-sdk");
 
-StellarSdk.Keypair.random.mockReturnValue({
+LantahSdk.Keypair.random.mockReturnValue({
   publicKey: () => PUBLIC_KEY,
   secret: () => SECRET_KEY,
 });
 
-StellarSdk.MuxedAccount.mockImplementation(() => {
+LantahSdk.MuxedAccount.mockImplementation(() => {
   return {
     accountId: jest.fn(() => MUXED_ACCOUNT_CREATED),
   };
 });
 
-StellarSdk.MuxedAccount.fromAddress.mockImplementation(() => {
+LantahSdk.MuxedAccount.fromAddress.mockImplementation(() => {
   return {
     baseAccount: jest.fn(() => ({
       accountId: jest.fn(() => MUXED_ACCOUNT_PARSED),
