@@ -4,10 +4,10 @@ export const Introduction = () => {
       <div className="so-back">
         <div className="so-chunk">
           <div className="Introduction__container">
-            <h2>Lantah Laboratory</h2>
+            <h2>Metriq Laboratory</h2>
             <p className="Introduction__lead">
-              The Lantah Laboratory is a set of tools that enables people to
-              try out and learn about the Lantah network. The laboratory can{" "}
+              The Metriq Laboratory is a set of tools that enables people to
+              try out and learn about the Metriq network. The laboratory can{" "}
               <a href="#txbuilder">build transactions</a>,{" "}
               <a href="#txsigner">sign them</a>, and{" "}
               <a href="#explorer?resource=transactions&endpoint=create">
@@ -21,8 +21,8 @@ export const Introduction = () => {
             </p>
 
             <p>
-              Lantah docs are available{" "}
-              <a href="https://www.lantah.org/documentation">
+              Metriq docs are available{" "}
+              <a href="https://www.Metriq.org/documentation">
                 here.
               </a>
               .

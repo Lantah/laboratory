@@ -39,7 +39,7 @@ export const EndpointExplorer = () => {
               REST API endpoints
             </a>{" "}
             on the OrbitR server. OrbitR is the client facing library for the
-            Lantah ecosystem.
+            Metriq ecosystem.
           </p>
         </div>
         <div className="EndpointExplorer">

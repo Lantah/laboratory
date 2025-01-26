@@ -25,7 +25,7 @@ class TransactionBuilder extends React.Component {
           <div className="so-chunk">
             <div className="pageIntro">
               <p>
-                The transaction builder lets you build a new lantah
+                The transaction builder lets you build a new Metriq
                 transaction.
               </p>
               <p>
